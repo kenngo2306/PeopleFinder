@@ -71,6 +71,7 @@ public class DB
 		}
 	}
 	
+	//this method searches for a person with an id
 	public Person findPersonWithId(int id)
 	{
 		Person person = new Person();
@@ -111,6 +112,8 @@ public class DB
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		//after all, close the connection
 		finally
 		{
 			try
@@ -126,6 +129,7 @@ public class DB
 		return person;
 	}
 	
+	//this method searches a last name in the database and return a list of result
 	public ArrayList<Person> findPeople(String query)
 	{
 		ArrayList<Person> people = new ArrayList<Person>();
@@ -160,6 +164,8 @@ public class DB
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		//after all, close the connection
 		finally
 		{
 			try

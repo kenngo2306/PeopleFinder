@@ -1,3 +1,6 @@
+/*
+ * This servlet accepts an person id, searches and return person detail
+ */
 package main;
 
 import java.io.IOException;
@@ -36,19 +39,28 @@ public class ServletPersonDetail extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		//get input from client
 		System.out.println("dopost");
 		String idStr = request.getParameter("id");
 		
+		
+		//validate input
 		if(!Validator.validateInt(idStr))
 		{
+			//send error if invalid integer
 			response.sendError(400, "Invalid input");
 		}
 		else
 		{
+			//format input
 			int id = Integer.parseInt(idStr);
+			
+			//find a person with an id
 			DB db = new DB();
 			Person person = db.findPersonWithId(id);
 			
+			//set up return string
 			String personData = "";
 			
 			personData += "<p> ID: ";
@@ -79,7 +91,7 @@ public class ServletPersonDetail extends HttpServlet {
 			personData += person.getEmailAddress();
 			personData += "</p>";
 			
-			
+			//set personData and forward it to a jsp page to display data
 			request.setAttribute("personData", personData);
 			getServletContext().getRequestDispatcher("/PersonDetail.jsp").forward(request, response);
 		}

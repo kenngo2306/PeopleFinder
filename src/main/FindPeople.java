@@ -1,3 +1,6 @@
+/*
+ * This servlet is used to accept a string from user and search for the last name in the database
+ */
 package main;
 
 import java.io.IOException;
@@ -36,11 +39,21 @@ public class FindPeople extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		//get input parameter
 		String queryStr = request.getParameter("query");
+		
+		//TODO validate inputs
+		//do nothing yet
+		
+		//uppercase the query string
 		String finalQuery = queryStr.toUpperCase();
+		
+		//search for a list of people in the database
 		DB db = new DB();
 		ArrayList<Person> people = db.findPeople(finalQuery);
 		
+		//loop through the resultset and create table data
 		String tableData = "";
 		for(Person person:people)
 		{
@@ -59,6 +72,8 @@ public class FindPeople extends HttpServlet {
 			tableData += "</td>";
 			tableData += "</tr>";
 		}
+		
+		//set table data as a attribute and call peoplelist.jsp to display the table to user
 		request.setAttribute("tableData", tableData);
 		getServletContext().getRequestDispatcher("/PeopleList.jsp").forward(request, response);
 	}
