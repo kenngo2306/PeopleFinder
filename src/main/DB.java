@@ -140,7 +140,7 @@ public class DB
 				+ " CUSTOMER cust "
 				+ " LEFT OUTER JOIN COMPANY comp ON cust.COMPANYID = comp.COMPANYID "
 				+ " LEFT OUTER JOIN LOCATION loc ON cust.LOCATIONID = loc.ID "
-				+ " WHERE UPPER(LASTNAME) LIKE '%"  + query + "%' OR UPPER(COMPANYNAME) LIKE '%"  + query + "%'";
+				+ " WHERE UPPER(LASTNAME) LIKE '%?%' OR UPPER(COMPANYNAME) LIKE '%?%'";
 		
 		Connection conn = null;
 		ResultSet result = null;
@@ -148,6 +148,8 @@ public class DB
 		{
 			conn =  DB.getConnection();
 			PreparedStatement preStatement = conn.prepareStatement(sql);
+			preStatement.setString(1, query);
+			preStatement.setString(2, query);
 			result = preStatement.executeQuery();
 			while(result.next())
 			{
