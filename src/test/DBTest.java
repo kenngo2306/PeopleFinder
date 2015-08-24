@@ -18,20 +18,20 @@ import org.junit.Test;
 public class DBTest
 {
 
-//	@Test
+	@Test
 	public void testFindPeople()
 	{
 		DB db = new DB();
 		System.out.println("in test");
-		ArrayList<Person> people = db.findPeople("SMIT");
+		ArrayList<Person> people = db.findPeople("HELP");
 		
 		for(Person person: people)
 		{
-			System.out.println(person.getFirstName());
+			System.out.println(person.getLastName() +" "+ person.getCompanyName());
 		}
 	}
 	
-	@Test
+//	@Test
 	public void testFindPerson()
 	{
 		DB db = new DB();

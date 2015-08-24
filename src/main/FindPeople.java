@@ -68,6 +68,9 @@ public class FindPeople extends HttpServlet {
 			tableData += person.getLastName();
 			tableData += "</td>";
 			tableData += "<td>";
+			tableData += person.getCompanyName();
+			tableData += "</td>";
+			tableData += "<td>";
 			tableData += "<a href=\"PersonDetail?id=" + person.getId() + "\">View Detail </a>";
 			tableData += "</td>";
 			tableData += "</tr>";

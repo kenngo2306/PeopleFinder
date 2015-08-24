@@ -44,6 +44,7 @@
 						<td> ID </td>
 						<td> First Name </td>
 						<td> Last Name </td>
+						<td> Company </td>
 						<td> Action </td>
 					</tr>
 				</thead>

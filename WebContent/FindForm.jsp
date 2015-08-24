@@ -34,12 +34,12 @@
 </nav>
 
 	<div class ="panel panel-primary col-sm-4 col-sm-offset-4">
-		<div class ="panel-heading">Find People</div>
+		<div class ="panel-heading"> <span class="glyphicon glyphicon-search"></span> Find People</div>
 		<div class ="panel-body">
 			<form action ="FindPeople" method="POST">
 				<div class="form-group">
-					<label for="query">Search for: </label>
-					<input type="text" class="form-control" name="query"/>
+					<label for="query">  Search for last name: </label>
+					<input type="text" class="form-control" placeholder="enter search here" name="query"/>
 				
 				
 				<br>

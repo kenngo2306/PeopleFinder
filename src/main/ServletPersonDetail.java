@@ -63,31 +63,31 @@ public class ServletPersonDetail extends HttpServlet {
 			//set up return string
 			String personData = "";
 			
-			personData += "<p> ID: ";
+			personData += "<p> <span class=\"glyphicon glyphicon-asterisk\"></span> ID: ";
 			personData += person.getId();
 			personData += "</p>";
 			
-			personData += "<p> Title: ";
+			personData += "<p> <span class=\"glyphicon glyphicon-pushpin\"></span> Title: ";
 			personData += person.getTitle();
 			personData += "</p>";
 			
-			personData += "<p> Name: ";
+			personData += "<p> <span class=\"glyphicon glyphicon-user\"></span> Name: ";
 			personData += person.getFirstName() + " " + person.getLastName() ;
 			personData += "</p>";
 			
-			personData += "<p> Company: ";
+			personData += "<p> <span class=\"glyphicon glyphicon-briefcase\"></span> Company: ";
 			personData += person.getCompanyName();
 			personData += "</p>";
 			
-			personData += "<p> Position: ";
+			personData += "<p> <span class=\"glyphicon glyphicon-tower\"> </span> Position: ";
 			personData += person.getPosition();
 			personData += "</p>";
 			
-			personData += "<p> Address: ";
+			personData += "<p> <span class=\"glyphicon glyphicon-map-marker\"> </span> Address: ";
 			personData += person.getStreetAddress() + " " + person.getCity() + " " + person.getStateName() + " " + person.getZipCode();
 			personData += "</p>";
 			
-			personData += "<p> Email: ";
+			personData += "<p> <span class=\"glyphicon glyphicon-envelope\"> </span> Email: ";
 			personData += person.getEmailAddress();
 			personData += "</p>";
 			
